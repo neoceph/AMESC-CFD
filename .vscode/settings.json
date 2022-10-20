@@ -1,0 +1,8 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    // "cmake.buildDirectory": "${workspaceFolder}/build/${buildKit}/${buildType}"
+    // "cmake.buildDirectory": "${workspaceFolder}/build/${variant:buildTarget}-${variant:buildOpt}"
+    "cmake.generator": "Unix Makefiles",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.configureOnOpen": true
+}
