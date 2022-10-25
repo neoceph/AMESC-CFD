@@ -6,19 +6,13 @@ file(READ ${CMAKE_CURRENT_SOURCE_DIR}/CMakeSetup.json CMakeSetup_STRING)
 # extracting project name and devleoper names from the json file.
 string(JSON Project_NAME GET ${CMakeSetup_STRING} 0 ProjectName)
 string(JSON Project_DEVELOPER GET ${CMakeSetup_STRING} 0 Developer)
+string(JSON Document_Generation GET ${CMakeSetup_STRING} 0 DocumentGeneration)
 
 # CPack and git versioning stuffs
 
 # Appends the cmake/modules path to MAKE_MODULE_PATH variable.
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 
-# Building a static library would require uncommenting the following two variable setting.
-# set(BUILD_SHARED_LIBS OFF)
-# set(CMAKE_EXE_LINKER_FLAGS "-static")
-
-
-# use, i.e. don't skip the full RPATH for the build tree
-SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
 
 # Make a version file containing the current version from git.
 if(EXISTS "${PROJECT_SOURCE_DIR}/versionForSourcePackage.cmake")
@@ -62,7 +56,7 @@ enable_testing()
 
 # specifying the header directory
 include_directories(
-    ${ProjectLib} "${CMAKE_SOURCE_DIR}/src/headers"
+    ${ProjectLib} "${CMAKE_SOURCE_DIR}/src/headers" "${CMAKE_SOURCE_DIR}/extLibs"
     )
 
 # setting the directory of the source for doxygen documentation
@@ -102,6 +96,9 @@ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/extLibs/googletest/CMakeLists.txt")
     message(FATAL_ERROR "The googletest submodules was not downloaded! GIT_SUBMODULE is either turned off or failed. Please update submodules")
 endif()
 
+# SET(Document_Generation  FALSE)
+
+if (${Document_Generation})
 # setting up sphinx-build with readthedocs theme
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/doc/usermanual)    
 configure_file(
@@ -171,7 +168,7 @@ if (DOXYGEN_FOUND)
 else (DOXYGEN_FOUND)
     message("Doxygen need to be installed to generate the doxygen documentation!")
 endif (DOXYGEN_FOUND)
-
+endif(${Document_Generation})
 
 # adding the googletest library separately as including the subdirectory with the previous command did not work!
 add_subdirectory(

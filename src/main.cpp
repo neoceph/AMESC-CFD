@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "version.h"
+#include "Eigen/Dense"
 
 
 int main (int arg, char *argv[])

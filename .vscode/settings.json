@@ -4,5 +4,8 @@
     // "cmake.buildDirectory": "${workspaceFolder}/build/${variant:buildTarget}-${variant:buildOpt}"
     "cmake.generator": "Unix Makefiles",
     "cmake.buildDirectory": "${workspaceFolder}/build",
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "ostream": "cpp"
+    }
 }

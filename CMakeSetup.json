@@ -1,8 +1,10 @@
 [
     {
        "ProjectName": "AMESC-CFD",
-       "Developer": "Abdullah Al Amin",
-       "StartYear": "2021"
+       "Developer": "Abdullah Al Amin and Satyajit Mojumder",
+       "StartYear": "2021",
+       "DocumentGeneration": "TRUE",
+       "Comment": "Change DocumentGeneration from 'TRUE' to 'FALSE' for changing document generation to not generating document"
     }
  ]
 
