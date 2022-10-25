@@ -1,13 +1,30 @@
 #include<iostream>
 
-#include "mesh.h"
+// External library headers
 #include "Eigen/Dense"
+
+// Custom headers
+#include "mesh.h"
+#include "physics.h"
+
+MESH::MESH(PHYSICS *PHYSICSObj)
+{
+
+}
 
 int MESH::meshGen()
 {
     std::cout << "Initializing mesh ..." << std::endl;
+    
+    PHYSICS diffusion;
+    diffusion.genPhysics();
+
+    // discretize(diffusion.stateVariable);
+
     return 0;
 }
+
+
 
 int MAC(int x, int y, int& sum)
 {

@@ -7,8 +7,8 @@
 
 int main (int arg, char *argv[])
 {
-    MESH a;
-    a.meshGen();
+    PHYSICS a;
+    a.genPhysics();
     if (arg < 2)
     {
         int array[3] = {0, 1, 2};
