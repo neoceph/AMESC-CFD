@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to AM-CFD's documentation!
+Welcome to AMESC-CFD's documentation!
 ==================================
-AM-CFD is a finite volume based laser powder based fusion computational analysis tool. In the current version AM-CFD
-is solving Navier-Stokes equation and Energy equation to calculate the temperature distribution, solid fraction, melt pool etc for a given spot and scan laser.
+AMESC-CFD is a finite volume based laser powder based fusion (LPBF) computational analysis tool. In the current version AMESC-CFD
+will solve Navier-Stokes equation with Energy equation while heavily using parallel computation leveraging multi-core cpus and gpu acceleration.
 
 .. toctree::
    :maxdepth: 2
