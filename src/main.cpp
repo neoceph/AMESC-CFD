@@ -2,11 +2,13 @@
 #include <string.h>
 
 #include "version.h"
-#include "Eigen/Dense"
+#include "mesh.h"
 
 
 int main (int arg, char *argv[])
 {
+    MESH a;
+    a.meshGen();
     if (arg < 2)
     {
         int array[3] = {0, 1, 2};

@@ -3,6 +3,12 @@
 #include "mesh.h"
 #include "Eigen/Dense"
 
+int MESH::meshGen()
+{
+    std::cout << "Initializing mesh ..." << std::endl;
+    return 0;
+}
+
 int MAC(int x, int y, int& sum)
 {
     Eigen::MatrixXd m(2,2);
